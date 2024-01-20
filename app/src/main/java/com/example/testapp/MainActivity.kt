@@ -30,6 +30,7 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.testapp.screens.HomeScreen
 import com.example.testapp.ui.theme.TestAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -49,44 +50,6 @@ class MainActivity : ComponentActivity() {
 }
 
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun HomeScreen() {
-    Scaffold(
-        topBar = { TopAppBar(
-            modifier = Modifier.shadow(elevation = 2.dp),
-            title = { Text(text = "Todo Application") },
-            actions = {
-                IconButton(onClick = {},) {
-                    Icon(imageVector = Icons.Outlined.Refresh, contentDescription ="" )
-                }
-                
-                Spacer(modifier = Modifier.width(10.dp))
-            }
-        )}
-    ) {paddingValues ->
-        LazyColumn(
-            modifier = Modifier.padding(paddingValues)
-        ) {
-            items(10){
-                ItemCard()
-            }
-        }
-    }
-}
 
-@Preview
-@Composable
-fun ItemCard() {
-    Box (
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(80.dp)
-            .background(Color.White)
-            .padding(horizontal = 10.dp)
-    ){
-        Text(
-            modifier = Modifier.padding(top = 10.dp, start = 10.dp),
-            text = "Hello Todo")
-    }
-}
+
+
