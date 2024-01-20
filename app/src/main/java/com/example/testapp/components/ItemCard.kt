@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -16,12 +17,10 @@ fun ItemCard() {
     Box (
         modifier = Modifier
             .fillMaxWidth()
-            .height(80.dp)
-            .background(Color.White)
-            .padding(horizontal = 10.dp)
+            .background(Color(0xFFE9E9E9), shape = RoundedCornerShape(5.dp))
     ){
         Text(
-            modifier = Modifier.padding(top = 10.dp, start = 10.dp),
+            modifier = Modifier.padding(horizontal = 10.dp, vertical = 10.dp),
             text = "Hello Todo")
     }
 }

@@ -1,6 +1,8 @@
 package com.example.testapp.screens
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
@@ -36,9 +38,12 @@ fun HomeScreen() {
         }
     ) {paddingValues ->
         LazyColumn(
-            modifier = Modifier.padding(paddingValues)
+            modifier = Modifier
+                .padding(paddingValues)
+                .padding(horizontal = 10.dp),
         ) {
             items(10){
+                Spacer(modifier = Modifier.height(10.dp))
                 ItemCard()
             }
         }
