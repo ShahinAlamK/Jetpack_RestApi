@@ -19,7 +19,8 @@ import javax.inject.Singleton
 object AppModule {
     @Provides
     @Singleton
-    fun providesMoshi():Moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
+    fun providesMoshi():Moshi = Moshi.Builder()
+        .add(KotlinJsonAdapterFactory()).build()
 
     @Provides
     @Singleton

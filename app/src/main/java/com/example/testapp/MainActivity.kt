@@ -27,11 +27,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.shadow
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import com.example.testapp.data.view.TodoViewModel
+import com.example.testapp.data.view.NewsViewModel
 import com.example.testapp.screens.HomeScreen
 import com.example.testapp.ui.theme.TestAppTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -39,7 +35,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    private val newsView:TodoViewModel by viewModels()
+    private val newsView:NewsViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
