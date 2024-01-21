@@ -5,10 +5,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.testapp.data.ApiStatus
-import com.example.testapp.data.repository.TodoRepository
+import com.example.testapp.data.repository.NewsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -16,19 +15,22 @@ import javax.inject.Inject
 @HiltViewModel
 class TodoViewModel
 @Inject
-constructor(private val todoRepository: TodoRepository):ViewModel() {
+constructor(private val newsRepository: NewsRepository):ViewModel() {
 
     val response: MutableState<ApiStatus> = mutableStateOf(ApiStatus.Empty)
     init {
-        fetchTodos()
+        fetchNews()
     }
-    fun fetchTodos() = viewModelScope.launch {
-        todoRepository.getTodo()
+    fun fetchNews() = viewModelScope.launch {
+        newsRepository.getNews()
             .onStart {
+                println("Loading")
                 response.value=ApiStatus.Loading
         }.catch {
+                println(it.message)
             response.value = ApiStatus.Failure(it)
         }.collect{
+                println(it.size)
             response.value = ApiStatus.Success(it)
         }
     }

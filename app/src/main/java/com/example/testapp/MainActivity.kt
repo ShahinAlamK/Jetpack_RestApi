@@ -39,7 +39,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    private val todoView:TodoViewModel by viewModels()
+    private val newsView:TodoViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -48,7 +48,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                   HomeScreen(todoViewModel = todoView)
+                   HomeScreen(todoViewModel = newsView)
                 }
             }
         }

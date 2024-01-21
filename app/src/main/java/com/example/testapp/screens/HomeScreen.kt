@@ -39,7 +39,6 @@ fun HomeScreen(todoViewModel: TodoViewModel) {
                 IconButton(onClick = {},) {
                     Icon(imageVector = Icons.Outlined.Refresh, contentDescription ="" )
                 }
-
                 Spacer(modifier = Modifier.width(10.dp))
             }
         )
@@ -68,7 +67,7 @@ fun TodoList(todoViewModel: TodoViewModel,paddingValues: PaddingValues) {
                 ) {
                     items(response.data) {
                         Spacer(modifier = Modifier.height(10.dp))
-                        ItemCard(todoModel = it)
+                       Text(text = it.title)
                     }
                 }
             }
