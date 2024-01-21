@@ -31,15 +31,14 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.testapp.data.view.TodoViewModel
+import com.example.testapp.data.view.ProductViewModel
 import com.example.testapp.screens.HomeScreen
 import com.example.testapp.ui.theme.TestAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-
-    private val todoView:TodoViewModel by viewModels()
+    private val productView:ProductViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -48,7 +47,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                   HomeScreen(todoViewModel = todoView)
+                    HomeScreen(productView = productView)
                 }
             }
         }

@@ -77,7 +77,7 @@ dependencies {
     kapt("androidx.hilt:hilt-compiler:1.1.0")
 
     kapt("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.5.0")
-    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+    implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
 
     //kotlin coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")

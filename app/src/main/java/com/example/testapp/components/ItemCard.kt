@@ -11,9 +11,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.example.testapp.data.models.Product
 
 @Composable
-fun ItemCard() {
+fun ItemCard(product: Product) {
     Box (
         modifier = Modifier
             .fillMaxWidth()
@@ -21,6 +22,6 @@ fun ItemCard() {
     ){
         Text(
             modifier = Modifier.padding(horizontal = 10.dp, vertical = 10.dp),
-            text = "Hello Todo")
+            text = product.title)
     }
 }
